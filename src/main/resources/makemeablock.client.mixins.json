@@ -1,0 +1,14 @@
+{
+	"required": true,
+	"package": "com.makemeablock.client.mixin",
+	"compatibilityLevel": "JAVA_21",
+	"client": [
+		"AvatarRendererMixin",
+		"ItemInHandRendererMixin",
+		"SpriteContentsAccessor",
+		"ModelPartAccessor"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	}
+}

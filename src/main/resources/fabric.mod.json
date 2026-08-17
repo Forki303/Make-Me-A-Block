@@ -1,0 +1,29 @@
+{
+	"schemaVersion": 1,
+	"id": "makemeablock",
+	"version": "${version}",
+	"name": "MakeMeABlock",
+	"description": "Press B to become a block skin! Pick any block, paint your own skin, or reset it.",
+	"authors": [
+		"Forki303"
+	],
+	"license": "MIT",
+	"environment": "client",
+	"entrypoints": {
+		"client": [
+			"com.makemeablock.client.MakeMeABlockClient"
+		]
+	},
+	"mixins": [
+		{
+			"config": "makemeablock.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.19.3",
+		"minecraft": "~26.2",
+		"java": ">=25",
+		"fabric-api": "*"
+	}
+}

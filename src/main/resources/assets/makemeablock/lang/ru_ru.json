@@ -1,0 +1,18 @@
+{
+	"key.makemeablock.open": "Открыть меню скина-блока",
+	"key.category.makemeablock.menu": "Make Me A Block",
+	"screen.makemeablock.picker.title": "Выбери блок для своего скина",
+	"screen.makemeablock.painter.title": "Рисуй на своём скине",
+	"screen.makemeablock.painter.brush": "Кисть: %s px (колесо мыши — размер)",
+	"screen.makemeablock.status.custom": "Активно: нарисованный скин",
+	"screen.makemeablock.status.block": "Активно: %s",
+	"screen.makemeablock.status.none": "Активно: обычный скин",
+	"button.makemeablock.paint": "Рисовать",
+	"button.makemeablock.reset": "Сбросить",
+	"button.makemeablock.close": "Закрыть",
+	"button.makemeablock.save": "Сохранить",
+	"button.makemeablock.cancel": "Отмена",
+	"button.makemeablock.eraser": "Ластик",
+	"button.makemeablock.eraser.on": "Ластик: вкл",
+	"button.makemeablock.eraser.off": "Ластик: выкл"
+}

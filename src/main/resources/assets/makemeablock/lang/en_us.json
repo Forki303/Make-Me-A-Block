@@ -1,0 +1,18 @@
+{
+	"key.makemeablock.open": "Open Block Skin Menu",
+	"key.category.makemeablock.menu": "Make Me A Block",
+	"screen.makemeablock.picker.title": "Choose a block for your skin",
+	"screen.makemeablock.painter.title": "Paint your skin",
+	"screen.makemeablock.painter.brush": "Brush: %s px (scroll to change)",
+	"screen.makemeablock.status.custom": "Active: custom painted skin",
+	"screen.makemeablock.status.block": "Active: %s",
+	"screen.makemeablock.status.none": "Active: normal skin",
+	"button.makemeablock.paint": "Paint",
+	"button.makemeablock.reset": "Reset",
+	"button.makemeablock.close": "Close",
+	"button.makemeablock.save": "Save",
+	"button.makemeablock.cancel": "Cancel",
+	"button.makemeablock.eraser": "Eraser",
+	"button.makemeablock.eraser.on": "Eraser: on",
+	"button.makemeablock.eraser.off": "Eraser: off"
+}
