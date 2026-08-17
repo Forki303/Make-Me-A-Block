@@ -1,7 +1,7 @@
 # MakeMeABlock
 
 <p align="center">
-  <img src="screenshot.png" alt="MakeMeABlock" width="256">
+  <img src="https://raw.githubusercontent.com/Forki303/Make-Me-A-Block/main/screenshot.png" alt="MakeMeABlock" width="256">
 </p>
 
 Become a block in Minecraft! Press **B** to open the block picker, choose any block to wear as your skin — or paint your own custom skin, pixel by pixel.
@@ -10,9 +10,9 @@ A client-side Fabric mod for Minecraft **26.2**.
 
 ## Screenshots
 
-![Block picker](screenshot-1.png)
+![Block picker](https://raw.githubusercontent.com/Forki303/Make-Me-A-Block/main/screenshot-1.png)
 
-![Skin painter](screenshot-2.png)
+![Skin painter](https://raw.githubusercontent.com/Forki303/Make-Me-A-Block/main/screenshot-2.png)
 
 ## Features
 
