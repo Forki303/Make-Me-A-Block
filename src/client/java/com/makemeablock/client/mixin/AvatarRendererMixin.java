@@ -1,9 +1,9 @@
 package com.makemeablock.client.mixin;
 
 import com.makemeablock.client.BlockSkinState;
-import net.minecraft.client.Minecraft;
 import net.minecraft.client.entity.ClientAvatarEntity;
 import net.minecraft.client.renderer.entity.player.AvatarRenderer;
+import net.minecraft.world.entity.Avatar;
 import net.minecraft.world.entity.player.PlayerSkin;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -16,6 +16,6 @@ public class AvatarRendererMixin {
 		at = @At(value = "INVOKE", target = "Lnet/minecraft/client/entity/ClientAvatarEntity;getSkin()Lnet/minecraft/world/entity/player/PlayerSkin;")
 	)
 	private PlayerSkin makemeablock$useBlockSkin(final ClientAvatarEntity entity) {
-		return BlockSkinState.applyTo(entity.getSkin(), entity == Minecraft.getInstance().player);
+		return BlockSkinState.applyFor(entity.getSkin(), ((Avatar) entity).getUUID());
 	}
 }

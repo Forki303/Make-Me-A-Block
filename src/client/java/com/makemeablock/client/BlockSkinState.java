@@ -1,8 +1,10 @@
 package com.makemeablock.client;
 
+import com.makemeablock.MakeMeABlock;
 import com.mojang.blaze3d.platform.NativeImage;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.UUID;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.texture.DynamicTexture;
 import net.minecraft.core.ClientAsset;
@@ -11,7 +13,7 @@ import net.minecraft.world.entity.player.PlayerSkin;
 import net.minecraft.world.level.block.Block;
 
 public final class BlockSkinState {
-	public static final Identifier ACTIVE_TEXTURE = Identifier.fromNamespaceAndPath(MakeMeABlockClient.MOD_ID, "textures/skin/active");
+	public static final Identifier ACTIVE_TEXTURE = Identifier.fromNamespaceAndPath(MakeMeABlock.MOD_ID, "textures/skin/active");
 
 	private static DynamicTexture texture;
 	private static NativeImage image;
@@ -47,6 +49,34 @@ public final class BlockSkinState {
 		);
 	}
 
+	public static PlayerSkin applyFor(final PlayerSkin original, final UUID uuid) {
+		net.minecraft.client.player.LocalPlayer self = Minecraft.getInstance().player;
+		if (self != null && self.getUUID().equals(uuid) && isActive()) {
+			return new PlayerSkin(
+				new ClientAsset.ResourceTexture(ACTIVE_TEXTURE, ACTIVE_TEXTURE),
+				original.cape(),
+				original.elytra(),
+				original.model(),
+				original.secure()
+			);
+		}
+		return applyToRemote(original, uuid);
+	}
+
+	public static PlayerSkin applyToRemote(final PlayerSkin original, final UUID uuid) {
+		Identifier textureId = RemoteSkinState.textureId(uuid);
+		if (textureId == null) {
+			return original;
+		}
+		return new PlayerSkin(
+			new ClientAsset.ResourceTexture(textureId, textureId),
+			original.cape(),
+			original.elytra(),
+			original.model(),
+			original.secure()
+		);
+	}
+
 	public static void selectBlock(final Block newBlock) {
 		custom = false;
 		block = newBlock;
@@ -56,12 +86,14 @@ public final class BlockSkinState {
 			blockCache.put(newBlock, cached);
 		}
 		setImage(cached.mappedCopy(pixel -> pixel));
+		SkinSyncClient.sendUpdate();
 	}
 
 	public static void selectCustom(final NativeImage newImage) {
 		custom = true;
 		block = null;
 		setImage(newImage);
+		SkinSyncClient.sendUpdate();
 	}
 
 	public static NativeImage currentImageCopy() {
@@ -76,6 +108,7 @@ public final class BlockSkinState {
 			texture.close();
 			texture = null;
 		}
+		SkinSyncClient.sendUpdate();
 	}
 
 	private static void setImage(final NativeImage newImage) {

@@ -6,7 +6,7 @@
 
 Become a block in Minecraft! Press **B** to open the block picker, choose any block to wear as your skin — or paint your own custom skin, pixel by pixel.
 
-A client-side Fabric mod for Minecraft **26.2**.
+A Fabric mod for Minecraft **26.2**, with server support so other players with the mod can see your skin.
 
 ## Screenshots
 
@@ -19,6 +19,7 @@ A client-side Fabric mod for Minecraft **26.2**.
 - **Block skin** — pick any block from the picker and your player skin becomes that block, rendered on your avatar and first-person arms
 - **Skin painter** — a built-in editor with a 16-color palette, adjustable brush size and an eraser
 - **Block tinting** — grass, leaves and other tinted blocks are rendered with their natural colors
+- **Skin sync** — players with the mod see your block or custom-painted skin (requires the mod on the server; automatic in singleplayer)
 - **Reset anytime** — switch back to your normal skin with one click
 
 ## Requirements

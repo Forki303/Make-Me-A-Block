@@ -8,8 +8,11 @@
 		"Forki303"
 	],
 	"license": "MIT",
-	"environment": "client",
+	"environment": "*",
 	"entrypoints": {
+		"main": [
+			"com.makemeablock.MakeMeABlock"
+		],
 		"client": [
 			"com.makemeablock.client.MakeMeABlockClient"
 		]
